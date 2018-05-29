@@ -9,6 +9,6 @@ script:
 after_success:
   - if [[ "$TRAVIS_BRANCH" == "master" ]]; then
       docker login -u $DOCKER_HUB_USER -p $DOCKER_HUB_PASSWORD ;
-      docker tag clair-scanner:$TRAVIS_COMMIT objectiflibre/clair-scanner:latest
+      docker tag clair-scanner:$TRAVIS_COMMIT objectiflibre/clair-scanner:latest ;
       docker push objectiflibre/clair-scanner:latest ;
     fi
