@@ -17,10 +17,10 @@ RUN curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh && 
 
 FROM alpine
 
-COPY --from=0 /gopath/src/clair/clair .
+COPY --from=0 /gopath/src/clair/clair /usr/local/bin
 
 EXPOSE 9279
 
-ENTRYPOINT ["./clair"]
+ENTRYPOINT ["clair"]
 
 CMD []
